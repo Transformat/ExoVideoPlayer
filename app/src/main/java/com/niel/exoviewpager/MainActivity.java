@@ -93,7 +93,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        try {
+    
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+    try {
             ((ItemViewerFragment)mAdapter.getItem(mPreviousPos)).imHiddenNow();
             ((ItemViewerFragment)mAdapter.getItem(position)).imVisibleNow();
 
@@ -102,11 +107,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
 
         mPreviousPos = position;
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-
     }
 
     @Override
